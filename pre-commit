@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+if ! golangci-lint run .; then
+  echo "Commit aborted due to lint errors."
+  exit 1
+fi
+
+echo "golangci-lint passed."
